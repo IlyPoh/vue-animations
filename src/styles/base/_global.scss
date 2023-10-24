@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+  font-family: $ff-inter;
+  font-size: $fz-normal;
+  line-height: 1.5rem;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+
+  font-family: $ff-inter;
+  font-size: $fz-normal;
+}
+
+#app {
+  height: 100%;
+  @include display_flex($direction: column, $align: center, $justify: center);
+}
