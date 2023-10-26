@@ -1,23 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700&family=Inter:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap');
 
 * {
-  font-family: $ff-inter;
-  font-size: $fz-normal;
-  line-height: 1.5rem;
+  font-family: $ff-gothic;
+  line-height: 1.6em;
 }
 
 html {
   height: 100%;
+
+  font-size: $fz-normal;
 }
 
 body {
   height: 100%;
 
-  font-family: $ff-inter;
+  font-family: $ff-gothic;
   font-size: $fz-normal;
 }
 
 #app {
   height: 100%;
-  @include display_flex($direction: column, $align: center, $justify: center);
+  @include display_flex($direction: column);
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 84px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+a {
+  cursor: pointer;
+}
+
+.section {
+  &-overflow-x {
+    overflow-x: hidden;
+  }
+
+  &-title {
+    position: relative;
+
+    font-size: rem(80);
+    font-weight: 600;
+    line-height: 0.99;
+
+    &::after {
+      content: '';
+
+      background-image: url('/src/assets/icons/Vector 2022.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      height: 100%;
+
+      position: absolute;
+      z-index: -1;
+    }
+  }
 }

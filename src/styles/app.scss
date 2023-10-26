@@ -3,6 +3,7 @@
 @import './base/config';
 @import './base/extends';
 @import './base/mixins';
+@import './base/functions';
 @import './base/global';
 
 // components
@@ -10,4 +11,7 @@
 
 // sections
 @import './sections/header';
-@import './sections/footer';
+@import './sections/firstSlide';
+@import './sections/secondSlide';
+@import './sections/thirdSlide';
+@import './sections/fourthSlide';

@@ -1,0 +1,120 @@
+.first-slide {
+  position: relative;
+
+  margin-bottom: rem(23);
+
+  &:before {
+    content: url('/src/assets/icons/Highlight 31.svg');
+
+    position: absolute;
+    top: rem(52);
+    left: calc(rem(80) + rem(84));
+    z-index: -1;
+
+    width: rem(615);
+    aspect-ratio: 1;
+  }
+
+  &-content {
+    @include display_flex($align: flex-end, $gap: rem(80));
+    grid-template-areas: '_ title title' 'text cards cards';
+
+    &-text {
+      grid-area: text;
+
+      margin-bottom: rem(80);
+
+      p {
+        line-height: 1.28;
+
+        margin-bottom: rem(28);
+      }
+
+      button {
+        text-transform: uppercase;
+        font-family: $ff-inter;
+        font-weight: 600;
+        color: $color-green-08;
+      }
+    }
+
+    &-body {
+      &-title {
+        grid-area: title;
+
+        font-size: rem(90);
+        font-weight: 500;
+        line-height: 0.95;
+
+        margin-top: rem(48);
+        margin-bottom: rem(62);
+      }
+
+      &-cards {
+        grid-area: cards;
+        @include display_grid($columns: 3, $gap: rem(26));
+
+        color: $color-white;
+
+        &-card {
+          border-radius: 28px;
+
+          padding: rem(24) rem(29);
+
+          min-width: rem(272);
+
+          background-size: 150%;
+
+          &:first-child {
+            background-position: 20% 0;
+          }
+
+          &:nth-child(2) {
+            background-position: 15% 25%;
+          }
+
+          &:last-child {
+            background-position: 40% 30%;
+          }
+
+          &-header {
+            margin-bottom: rem(176);
+
+            &-name {
+              font-size: rem(29);
+              font-weight: 500;
+              line-height: 1.3;
+            }
+
+            &-text {
+              text-transform: uppercase;
+              font-family: $ff-inter;
+              font-size: rem(10);
+            }
+          }
+
+          &-footer {
+            @include display_flex($gap: rem(22));
+
+            text-transform: uppercase;
+
+            &-category {
+              font-size: rem(9);
+              font-family: $ff-roboto;
+              line-height: 1.3;
+
+              margin-bottom: rem(3);
+            }
+
+            &-content {
+              font-family: $ff-roboto;
+              font-size: rem(21.5);
+              font-weight: 600;
+              line-height: 1.3;
+            }
+          }
+        }
+      }
+    }
+  }
+}
