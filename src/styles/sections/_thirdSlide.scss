@@ -1,0 +1,131 @@
+.third-slide {
+  &-cards {
+    position: relative;
+
+    cursor: none;
+
+    margin: rem(160) 0 rem(320);
+
+    @include display_flex($justify: center, $gap: rem(120));
+
+    &::after {
+      content: url('/src/assets/icons/Highlight 10.svg');
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      transform: translate(15%, 85%) rotate(32deg);
+
+      @include imageSize(rem(300));
+    }
+
+    &-card {
+      border-radius: rem(36);
+
+      color: $color-white;
+
+      background-size: 215%;
+
+      &:nth-child(1) {
+        position: relative;
+
+        background-position: 45% 30%;
+
+        transform: rotate(-4.7deg);
+
+        &:before {
+          content: url('/images/glass 4.png');
+
+          position: absolute;
+          z-index: -1;
+          left: 10%;
+          top: 40%;
+
+          transform: translateY(-50%) rotate(-120deg);
+          filter: blur(4px);
+        }
+
+        &:after {
+          content: url('/images/32 7.png');
+
+          position: absolute;
+          z-index: -1;
+          left: -5%;
+          bottom: 25px;
+
+          transform: rotate(10deg);
+          filter: blur(2px);
+        }
+      }
+
+      &:nth-child(2) {
+        background-position: 60% 35%;
+
+        transform: translateY(rem(60)) rotate(3.6deg);
+      }
+
+      &-body {
+        @include display_flex($direction: column, $justify: flex-end);
+
+        max-width: rem(504);
+        height: rem(624);
+
+        padding: rem(48);
+
+        background-color: rgba($color-black, 0.2);
+
+        border-radius: rem(36);
+
+        &-title {
+          font-size: rem(83);
+          line-height: 0.96;
+          font-weight: 600;
+          margin-bottom: 1rem;
+        }
+
+        &-text {
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+}
+
+.custom-cursor {
+  @include display_flex($justify: center, $align: center);
+
+  pointer-events: none;
+  user-select: none;
+
+  position: absolute;
+  z-index: 9999;
+
+  width: rem(140);
+  aspect-ratio: 1;
+
+  font-weight: bold;
+  font-size: rem(14);
+  text-transform: uppercase;
+  color: $color-green-08;
+
+  background-color: $color-green-82;
+
+  border-radius: 50%;
+
+  transform: translate(-50%);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &-text {
+    position: relative;
+    z-index: 1;
+  }
+}

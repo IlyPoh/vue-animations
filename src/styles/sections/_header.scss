@@ -1,0 +1,44 @@
+.header {
+  @include display_flex($align: center, $justify: space-between, $gap: rem(16));
+
+  margin-top: rem(25);
+  margin-bottom: rem(25);
+
+  font-family: $ff-inter;
+  font-size: rem(16);
+  line-height: rem(26);
+  text-transform: uppercase;
+
+  &-section {
+    @include display_flex($align: center, $justify: space-between);
+
+    width: 100%;
+
+    padding: rem(9.5) rem(28);
+
+    border: 1px solid $color-black;
+    border-radius: 16px;
+
+    &-logo {
+      @include display_flex($align: center, $gap: rem(15));
+
+      img {
+        @include imageSize(rem(30));
+      }
+
+      span {
+        font-size: rem(26);
+        font-weight: 700;
+      }
+    }
+
+    &-nav {
+      @include display_flex($align: center, $gap: rem(40));
+      padding: rem(18) 0;
+    }
+  }
+
+  &-button {
+    border-radius: 16px;
+  }
+}

@@ -1,0 +1,11 @@
+.btn {
+  white-space: nowrap;
+  cursor: pointer;
+
+  &-black {
+    padding: rem(30) rem(32);
+    line-height: 1.34;
+    background-color: $color-black;
+    color: $color-white;
+  }
+}
