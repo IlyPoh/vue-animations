@@ -80,10 +80,8 @@
 import { gsap } from 'gsap';
 import SectionTitle from './SectionTitle.vue';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
 
 gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(CSSRulePlugin);
 
 export default {
   data() {
