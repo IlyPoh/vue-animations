@@ -1,23 +1,16 @@
-.first-slide {
-  position: relative;
-
+.slide-first {
   margin-bottom: rem(23);
 
-  &:before {
-    content: url('/src/assets/icons/Highlight 31.svg');
+  .slide-content {
+    position: relative;
 
-    position: absolute;
-    top: rem(52);
-    left: calc(rem(80) + rem(84));
-    z-index: -1;
-
-    width: rem(615);
-    aspect-ratio: 1;
-  }
-
-  &-content {
     @include display_flex($align: flex-end, $gap: rem(80));
+
     grid-template-areas: '_ title title' 'text cards cards';
+
+    overflow: hidden;
+
+    padding-bottom: rem(240);
 
     &-text {
       grid-area: text;
@@ -28,6 +21,11 @@
         line-height: 1.28;
 
         margin-bottom: rem(28);
+
+        span {
+          line-height: 1.28;
+          display: inline-block;
+        }
       }
 
       button {
@@ -48,6 +46,10 @@
 
         margin-top: rem(48);
         margin-bottom: rem(62);
+
+        span {
+          line-height: 0.95;
+        }
       }
 
       &-cards {
@@ -56,7 +58,7 @@
 
         color: $color-white;
 
-        &-card {
+        .card {
           border-radius: 28px;
 
           padding: rem(24) rem(29);
@@ -115,6 +117,16 @@
           }
         }
       }
+    }
+
+    .slide-background-image {
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      z-index: -1;
+
+      width: rem(615);
+      aspect-ratio: 1;
     }
   }
 }

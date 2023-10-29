@@ -1,131 +1,89 @@
-.third-slide {
-  &-cards {
-    position: relative;
+.slide-third {
+  .text-container {
+    max-width: rem(750);
 
-    cursor: none;
+    margin: 0 auto rem(84);
 
-    margin: rem(160) 0 rem(320);
+    text-align: center;
 
-    @include display_flex($justify: center, $gap: rem(120));
+    .section-title {
+      margin-bottom: rem(40);
 
-    &::after {
-      content: url('/src/assets/icons/Highlight 10.svg');
-      position: absolute;
-      bottom: 0;
-      right: 0;
+      &-underline {
+        bottom: 0%;
+        right: 3%;
 
-      transform: translate(15%, 85%) rotate(32deg);
+        transform: translate(-50%, 10%) scaleY(2);
 
-      @include imageSize(rem(300));
+        svg {
+          @include imageSize(rem(310));
+        }
+      }
     }
 
-    &-card {
-      border-radius: rem(36);
+    .slide-text {
+      opacity: 0.6;
+    }
+  }
+
+  .line-container {
+    padding-bottom: rem(100);
+
+    .line-block {
+      @include display_flex($align: center, $gap: rem(54));
+
+      position: relative;
+      white-space: nowrap;
 
       color: $color-white;
 
-      background-size: 215%;
+      padding: rem(45) rem(35);
+      margin-left: -2rem;
 
-      &:nth-child(1) {
-        position: relative;
+      width: 100%;
 
-        background-position: 45% 30%;
+      transform: rotate(-5deg);
 
-        transform: rotate(-4.7deg);
-
-        &:before {
-          content: url('/images/glass 4.png');
-
-          position: absolute;
-          z-index: -1;
-          left: 10%;
-          top: 40%;
-
-          transform: translateY(-50%) rotate(-120deg);
-          filter: blur(4px);
-        }
-
-        &:after {
-          content: url('/images/32 7.png');
-
-          position: absolute;
-          z-index: -1;
-          left: -5%;
-          bottom: 25px;
-
-          transform: rotate(10deg);
-          filter: blur(2px);
-        }
+      .line-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        height: 100%;
+        width: 200%;
+        background: $color-black;
       }
 
-      &:nth-child(2) {
-        background-position: 60% 35%;
+      .line-item {
+        @include display_flex($align: center, $gap: rem(36));
 
-        transform: translateY(rem(60)) rotate(3.6deg);
-      }
+        .item-image {
+          max-width: rem(192);
+          height: rem(130);
 
-      &-body {
-        @include display_flex($direction: column, $justify: flex-end);
+          img {
+            border-radius: rem(65);
 
-        max-width: rem(504);
-        height: rem(624);
+            max-width: rem(192);
+            height: rem(130);
 
-        padding: rem(48);
-
-        background-color: rgba($color-black, 0.2);
-
-        border-radius: rem(36);
-
-        &-title {
-          font-size: rem(83);
-          line-height: 0.96;
-          font-weight: 600;
-          margin-bottom: 1rem;
+            object-fit: cover;
+          }
         }
 
-        &-text {
-          line-height: 1.4;
+        .item-details {
+          .item-title {
+            font-size: rem(84);
+            font-weight: 700;
+            line-height: 0.96;
+          }
+
+          .item-text {
+            font-size: rem(28);
+            line-height: 0.96;
+          }
         }
       }
     }
-  }
-}
-
-.custom-cursor {
-  @include display_flex($justify: center, $align: center);
-
-  pointer-events: none;
-  user-select: none;
-
-  position: absolute;
-  z-index: 9999;
-
-  width: rem(140);
-  aspect-ratio: 1;
-
-  font-weight: bold;
-  font-size: rem(14);
-  text-transform: uppercase;
-  color: $color-green-08;
-
-  background-color: $color-green-82;
-
-  border-radius: 50%;
-
-  transform: translate(-50%);
-
-  opacity: 0;
-  visibility: hidden;
-
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-
-  &.visible {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  &-text {
-    position: relative;
-    z-index: 1;
   }
 }

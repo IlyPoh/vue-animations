@@ -1,72 +1,240 @@
-.second-slide {
+.slide-second {
   position: relative;
 
-  &-body {
+  .slide-body {
     text-align: center;
 
     max-width: rem(732);
 
-    margin: rem(240) auto 0;
+    margin: 0 auto;
 
     padding-bottom: rem(280);
 
-    &-title {
+    .section-title {
       margin-bottom: rem(25);
 
-      &::after {
-        width: rem(452);
-
-        right: rem(26);
-        top: 50%;
+      &-underline {
+        right: 2%;
+        bottom: -5%;
 
         transform: translateY(-50%);
 
         background-position: center;
+
+        svg {
+          @include imageSize(rem(470));
+        }
       }
     }
 
-    &-pills {
+    .slide-text {
+      opacity: 0.7;
+    }
+
+    .slide-pills {
       @include display_flex($gap: rem(10));
 
+      left: -100%;
+
       position: absolute;
-      left: 0;
 
-      transform: translateX(-60%);
+      margin-top: rem(50);
 
-      margin-top: rem(40);
+      .slide-pill {
+        @include imageSize(rem(94));
 
-      &-pill {
         &:first-child {
-          transform: rotate(0deg);
+          transform: rotate(-8deg);
         }
         &:nth-child(2) {
-          transform: rotate(-3deg);
-        }
-        &:nth-child(3) {
-          transform: rotate(1deg);
-        }
-        &:nth-child(4) {
           transform: rotate(5deg);
         }
+        &:nth-child(3) {
+          transform: rotate(-10deg);
+        }
+        &:nth-child(4) {
+          transform: rotate(7deg);
+        }
         &:nth-child(5) {
-          transform: rotate(-1deg);
+          transform: rotate(-8deg);
         }
         &:nth-child(6) {
-          transform: rotate(-7deg);
-        }
-        &:nth-child(7) {
-          transform: rotate(4deg);
-        }
-        &:nth-child(8) {
           transform: rotate(-5deg);
         }
-        &:nth-child(9) {
-          transform: rotate(1deg);
-        }
-        &:last-child {
+        &:nth-child(7) {
           transform: rotate(8deg);
         }
+        &:nth-child(8) {
+          transform: rotate(-6deg);
+        }
+        &:nth-child(9) {
+          transform: rotate(8deg);
+        }
+        &:last-child {
+          transform: rotate(-7deg);
+        }
       }
+    }
+
+    .slide-shape {
+      position: absolute;
+      right: -57%;
+      top: 45%;
+
+      z-index: -1;
+
+      transform: translate(-50%, -63%) rotate(69deg);
+    }
+  }
+
+  .cards-container {
+    position: relative;
+
+    margin: rem(160) 0 rem(320);
+
+    @include display_flex($justify: center, $gap: rem(120));
+
+    .card {
+      border-radius: rem(36);
+
+      cursor: none;
+
+      color: $color-white;
+
+      background-size: 215%;
+
+      &:nth-child(1) {
+        position: relative;
+
+        background-position: 45% 30%;
+
+        transform: rotate(-4.7deg);
+
+        &:before {
+          content: url('/src/assets/images/glass 4.png');
+
+          position: absolute;
+          z-index: -1;
+          left: 10%;
+          top: 40%;
+
+          transform: translateY(-50%) rotate(-120deg);
+          filter: blur(4px);
+
+          animation: firstPseudoLeft 20s ease infinite;
+          animation-delay: 2s;
+        }
+
+        &:after {
+          content: url('/src/assets/images/32 7.png');
+
+          position: absolute;
+          z-index: -1;
+          left: -5%;
+          bottom: 25px;
+
+          transform: rotate(10deg);
+          filter: blur(2px);
+
+          animation: secondPseudoLeft 20s ease infinite;
+          animation-delay: 2s;
+        }
+      }
+
+      &:nth-child(2) {
+        background-position: 60% 35%;
+
+        transform: translateY(rem(60)) rotate(3.6deg);
+      }
+
+      &-body {
+        @include display_flex($direction: column, $justify: flex-end);
+
+        max-width: rem(504);
+        height: rem(624);
+
+        padding: rem(48);
+
+        background-color: rgba($color-black, 0.2);
+
+        border-radius: rem(36);
+      }
+
+      &-title {
+        font-size: rem(83);
+        line-height: 0.96;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      &-text {
+        line-height: 1.4;
+      }
+    }
+
+    .cards-heart {
+      position: absolute;
+      right: 0;
+      bottom: -40%;
+
+      transform: rotate(35deg);
+    }
+  }
+
+  .cursor {
+    @include display_flex($justify: center, $align: center);
+
+    pointer-events: none;
+    user-select: none;
+
+    position: absolute;
+    z-index: 9999;
+
+    width: rem(140);
+    aspect-ratio: 1;
+
+    font-weight: bold;
+    font-size: rem(14);
+    text-transform: uppercase;
+    color: $color-green-08;
+
+    background-color: $color-green-82;
+
+    border-radius: 50%;
+
+    transform: translate(-50%);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    &.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &-text {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  @keyframes firstPseudoLeft {
+    50% {
+      left: 20%;
+    }
+    100% {
+      left: 10%;
+    }
+  }
+
+  @keyframes secondPseudoLeft {
+    50% {
+      left: 5%;
+    }
+    100% {
+      left: -5%;
     }
   }
 }
