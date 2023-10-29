@@ -16,6 +16,8 @@ body {
 
   font-family: $ff-gothic;
   font-size: $fz-normal;
+
+  overflow-x: hidden;
 }
 
 #app {
@@ -35,10 +37,6 @@ a {
 }
 
 .section {
-  &-overflow-x {
-    overflow-x: hidden;
-  }
-
   &-title {
     position: relative;
 
@@ -46,17 +44,17 @@ a {
     font-weight: 600;
     line-height: 0.99;
 
-    &::after {
-      content: '';
-
-      background-image: url('/src/assets/icons/Vector 2022.svg');
-      background-repeat: no-repeat;
-      background-size: contain;
-
-      height: 100%;
-
+    &-underline {
       position: absolute;
       z-index: -1;
     }
   }
+}
+
+.overflow-container {
+  overflow: hidden;
+}
+
+.overflow-x-container {
+  overflow-x: hidden;
 }

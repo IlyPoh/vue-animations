@@ -9,7 +9,8 @@
   line-height: rem(26);
   text-transform: uppercase;
 
-  &-section {
+  &-content {
+    position: relative;
     @include display_flex($align: center, $justify: space-between);
 
     width: 100%;
@@ -18,27 +19,34 @@
 
     border: 1px solid $color-black;
     border-radius: 16px;
+  }
 
-    &-logo {
-      @include display_flex($align: center, $gap: rem(15));
+  &-logo {
+    @include display_flex($align: center, $gap: rem(15));
 
-      img {
-        @include imageSize(rem(30));
-      }
-
-      span {
-        font-size: rem(26);
-        font-weight: 700;
-      }
+    svg {
+      @include imageSize(rem(30));
     }
 
-    &-nav {
-      @include display_flex($align: center, $gap: rem(40));
-      padding: rem(18) 0;
+    span {
+      font-size: rem(26);
+      font-weight: 700;
     }
+  }
+
+  &-nav {
+    @include display_flex($align: center, $gap: rem(40));
+    padding: rem(18) 0;
   }
 
   &-button {
     border-radius: 16px;
+  }
+
+  &-box {
+    position: absolute;
+    inset: -3px;
+
+    transform: rotateX(-180deg) rotateY(-180deg);
   }
 }
